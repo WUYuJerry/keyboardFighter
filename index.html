@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)https://www.oxxostudio.tw/demo/201601/web-audio-recorder-demo03.html -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="author" content="oxxo.studio">
+  <meta name="copyright" content="oxxo.studio">
+  <title>使用者介面</title>
+  <script src="./index_files/recorder.js.下載"></script>
+  <script src="jquery.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/index.css">
+
+</head>
+
+<body>
+  <div id="topic"><p>小白事件</p></div>
+
+  <div id="myModal" class="">
+
+    <div id="myModalContent" class="">
+
+      <span class="close" style="display: none">&times;</span>
+      <p id="state">
+      </p>
+      <p id="choose">
+      </p>
+      
+      <div id="yesORno" style="display:none">
+        <button class="yesButton" id="yesButton" disabled="">支持</button>
+        <button class="noButton" id="noButton" disabled="">反對</button>
+      </div>
+      <div id="popReply" style="display:none">
+        <button class="recordButton" id="recordButton" disabled="">錄音</button>
+        <button class="startButton" id="startButton" disabled="">start</button>
+        <button class="stopButton" id="stopButton" disabled="">stop</button>
+        <button class="textButton" id="textButton" disabled="">留言</button>
+        <input style="display:none" type="reset" value="Reset" id="reset">
+      </div>
+      <form id="replyForm" action="">
+        <p id="titleP">標題:</p>
+        <br>
+        <input type="text" id="replyTitle" required>
+        <br>
+        <p id="contentP">內容:</p>
+        <br>
+        <input type="text" id="replyContent" required>
+        <input type="submit" value="提交" id="textSend" onclick="textSubmit()" >
+      </form>
+    </div>
+  </div>
+  <div id="yesDiv">
+    <div id="yesReply">
+      <h3>小白就該被抓沒錯</h3>
+      <button class="choose" id="chooseyes">選擇</button>
+    </div>
+  </div>
+  <div id="noDiv">
+    <div id="noReply">
+      <h3>小白不該被抓走</h3>
+      <button class="choose" id="chooseno">選擇</button>
+    </div>
+  </div>
+
+  <div id="d">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+    var content = document.getElementById("myModalContent");
+    var choose = document.getElementById('choose');
+    var state = document.getElementById('state');
+
+    var yesbtn = document.getElementById("yesButton");
+    var nobtn = document.getElementById("noButton");
+    var recordbtn =document.getElementById("recordButton")
+    var startbtn = document.getElementById("startButton");
+    var stopbtn = document.getElementById("stopButton");
+    var textbtn = document.getElementById("textButton");
+    var textsendbtn = document.getElementById("textSend");
+    var replyTitle = document.getElementById("replyTitle");
+    var replyContent = document.getElementById("replyContent");
+
+    var span = document.getElementsByClassName("close")[0];
+
+
+    $(".yesButton").on("click", function() { //支持的按鈕
+      currentState = this.parentNode.parentNode.parentNode.id;
+      if (currentState == "yesDiv") {
+        stateText = "支持 "
+        recordState = "yes";
+      } else {
+        stateText = "支持 "
+        recordState = "no";
+      }
+      console.log(currentState);
+      popup(stateText);
+    });
+    $(".noButton").on("click", function() { //反對的按鈕
+      currentState = this.parentNode.parentNode.parentNode.id;
+      if (currentState == "yesDiv") {
+        stateText = "反對 ";
+        recordState = "no";
+        console.log(currentState);
+      } else {
+        stateText = "反對 ";
+        recordState = "yes";
+      }
+      console.log(currentState);
+      popup(stateText);
+    });
+    $("#chooseyes").on("click", function() { //我支持廢除死刑
+      clearAllChoosed();
+      choosedReply = this.parentNode.id;
+      $(".yesButton").attr("disabled", false);
+      $(".noButton").attr("disabled", false);
+      $("#yesORno").css("display", "block");
+      $("#choose").html(choosedReply);
+      $("#yesORno").appendTo("#yesReply")
+      console.log("choose :" + choosedReply);
+    });
+    $("#chooseno").on("click", function() { //我反對廢除死刑
+      clearAllChoosed();
+      choosedReply = this.parentNode.id;
+      $(".yesButton").attr("disabled", false);
+      $(".noButton").attr("disabled", false);
+      $("#yesORno").css("display", "block");
+      $("#choose").html(choosedReply);
+      $("#yesORno").appendTo("#noReply")
+      console.log("choose :" + choosedReply);
+    });
+
+    function popup(stateText) {
+      console.log("pop");
+      document.getElementById("reset").click();
+      modal.style.display = "block";
+      modal.className = "modal";
+      content.className = "modal-content";
+      $("#state").text(stateText).css("display","block");
+      $(".textButton,.recordButton").attr("disabled", false).css("display","block");
+      $("#popReply, .close").css("display", "block");
+      $("#replyContent,#replyTitle").val("");
+
+          $(".startButton,.stopButton").css("display", "none");
+    }
+
+    recordbtn.onclick = function() {
+      $("#replyForm").css("display", "block");
+      $("#replyContent, #contentP, #textSend").css("display","none");
+      $(".startButton").css("display", "block").attr("disabled",false);
+      $("#textButton,.recordButton").css("display", "none");
+    }
+
+    textbtn.onclick = function() {
+      $("#replyForm").css("display", "block");
+      $("#textButton,.recordButton").css("display", "none");
+      $("#replyForm").css("display", "block");
+      $("#replyContent, #contentP, #textSend").css("display","block");
+    }
+
+    function textSubmit() {
+      var ref, length ;
+      var title = replyTitle.value;
+      var content = replyContent.value;
+      if(title!=""&&content!=""){
+      if (recordState == "yes") {
+        ref = textyesRef;
+        length = (textyesNo.length + 1);
+        console.log("textyes now is :"+ (textyesNo.length + 1));
+      } else {
+        ref = textnoRef;
+        length = (textnoNo.length + 1);
+        console.log("textno now is :"+(textnoNo.lenght + 1));
+      }
+      ref.child(length).set({
+        download: false,
+        name: "text"+recordState,
+        title: title,
+        content: content,
+        state: recordState,
+        relation: choosedReply,
+        url: ""
+      })
+    }
+    }
+
+    span.onclick = function() { popClose(); } //按叉叉
+    window.onclick = function(event) { //按外面
+      if (event.target == modal) {
+        popClose();
+      }
+    }
+
+    function popClose() {
+
+      modal.className = "";
+      content.className = "";
+      $("#startButton").attr("disabled", true);
+      $("#replyForm,#state,.close,#popReply").css("display", "none");
+    };
+  </script>
+
+  <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+  <script>
+    var choosedReply;
+  </script>
+  <script>
+    var config = {
+      apiKey: "AIzaSyCkfLnPciCkGyQDbEPY1OUMY2OCtCzZrjo",
+      authDomain: "test0526-dd975.firebaseapp.com",
+      databaseURL: "https://test0526-dd975.firebaseio.com",
+      projectId: "test0526-dd975",
+      storageBucket: "test0526-sound",
+      messagingSenderId: "266498228200"
+    };
+    firebase.initializeApp(config);
+    var db = firebase.database();
+    var rootRef = db.ref();
+    var soundyesRef = db.ref("soundyes");
+    var soundnoRef = db.ref("soundno");
+    var soundyesNo = [];
+    var soundnoNo = [];
+    var currentState;
+    var recordState = "yes";
+    var textyesRef = db.ref("textyes");
+    var textnoRef = db.ref("textno");
+    var textyesNo = [];
+    var textnoNo = [];
+
+    //storageRef
+    var storageRef = firebase.storage().ref();
+
+    soundyesRef.on("child_added", getReplyNum);
+    soundnoRef.on("child_added", getReplyNum);
+    textyesRef.on("child_added", getReplyNum);
+    textnoRef.on("child_added", getReplyNum);
+
+    function getReplyNum(childSnapShot) {
+      num = parseInt(childSnapShot.key);
+      var state = childSnapShot.child("state").val();
+      var name = childSnapShot.child("name").val();
+      if (name == "textyes") {
+        textyesNo.push(num);
+        console.log("textyes next is :" + (textyesNo.length + 1));
+      }
+      if (name == "textno") {
+        textnoNo.push(num);
+        console.log("textnoNo next is :" + (textnoNo.length + 1));
+      }
+      if (name == "soundyes") {
+        soundyesNo.push(num);
+        console.log("soundyesNo next is :" + (soundyesNo.length + 1));
+      }
+      if (name == "soundno") {
+        soundnoNo.push(num);
+        console.log("soundnoNo next is :" + (soundnoNo.length + 1));
+      }
+    }
+
+    soundyesRef.on("child_added", createDiv);
+    soundnoRef.on("child_added", createDiv);
+    textyesRef.on("child_added", createDiv);
+    textnoRef.on("child_added", createDiv);
+
+    function createDiv(childSnapShot) {
+      var key = childSnapShot.key;
+      var name = childSnapShot.child("name").val();
+      var state = childSnapShot.val().state;
+      var div = document.createElement('div');
+      div.id = name + "Reply" + key;
+      var au = document.createElement('audio');
+      var title = document.createElement('h3')
+      title.innerHTML = childSnapShot.child("title").val();
+      var content = document.createElement('p')
+      content.innerHTML = childSnapShot.child("content").val();
+      var choose = document.createElement('button')
+      choose.innerHTML = "選擇";
+      choose.className = 'choose';
+      choose.id = 'choose' + name + key;
+
+
+      if(name == "textyes" || name =="textno"){
+        $("#" + state + "Div").append(div);
+        div.appendChild(title);
+        div.appendChild(content);
+        div.appendChild(choose);
+        select(name,key);
+      }
+      if(name == "soundyes" || name =="soundno"){
+      storageRef.child(name + key + ".wav").getDownloadURL().then(function(url) {
+        au.controls = true;
+        au.src = url;
+        // if (childSnapShot.val().state == "yes") {
+        $("#" + state + "Div").append(div);
+        div.appendChild(title);
+        div.appendChild(au);
+        div.appendChild(choose);
+        select(name,key);
+      })
+    }
+    };
+
+    function select(name,key) {
+      $("#choose" + name + key).on("click", function() {
+        $("#yesORno").appendTo("#"+this.parentNode.id)
+        choosedReply = this.parentNode.id;
+        $(".yesButton").attr("disabled", false);
+        $(".noButton").attr("disabled", false);
+        $("#yesORno").css("display", "block");
+        $("#choose").html("選擇 :" + choosedReply);
+        ref = whichType(this.id);
+        clearAllChoosed();
+        ref.on("value", function(snap) { //讓跟這個被選中的Reply 有關係的Reply變色
+          var relation = snap.child("relation").val(); //去db抓relation
+           document.getElementById(relation).className += "choosed";
+        })
+      })
+    };
+
+    function whichType(id){
+      if(id.indexOf("choosetextyes")>-1){
+        var ref = textyesRef.child(JSON.stringify(id)[14]);
+        return ref;
+      }
+      if(id.indexOf("choosetextno")>-1){
+        var ref = textnoRef.child(JSON.stringify(id)[13]);
+        return ref;
+      }
+      if(id.indexOf("choosesoundyes")>-1){
+        var ref = soundyesRef.child(JSON.stringify(id)[15]);
+        return ref;
+      }
+      if(id.indexOf("choosesoundno")>-1){
+        var ref = soundnoRef.child(JSON.stringify(id)[14]);
+        return ref;
+      }
+    }
+
+    function clearAllChoosed() {
+      document.getElementById("yesReply").className = "";
+      document.getElementById("noReply").className = "";
+      for (i = 1; i < soundyesNo.length + 1; i++) {
+        document.getElementById("soundyesReply" + i).className = "";
+      }
+      for (i = 1; i < textyesNo.length + 1; i++) {
+        document.getElementById("textyesReply" + i).className = "";
+      }
+      console.log("clearyes");
+      for (i = 1; i < soundnoNo.length + 1; i++) {
+        document.getElementById("soundnoReply" + i).className = "";
+      }
+      for (i = 1; i < textnoNo.length + 1; i++) {
+        document.getElementById("textnoReply" + i).className = "";
+      }
+      console.log("clearno");
+    }
+  </script>
+
+  <script>
+    window.AudioContext = window.AudioContext || window.webkitAudioContext;
+    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
+    window.URL = window.URL || window.webkitURL;
+    var recorder;
+    var d = document.getElementById('d');
+    for (var i = 0; i < 256; i++) {
+      d.innerHTML += '<div></div>';
+    }
+    var dd = document.querySelectorAll('#d div');
+    var $record = $('.startButton');
+    var $stop = $('.stopButton');
+    var timer;
+    var context = new AudioContext();
+
+    navigator.getUserMedia({
+      audio: true
+    }, function(stream) {
+      var microphone = context.createMediaStreamSource(stream);
+      var analyser = context.createAnalyser();
+      microphone.connect(analyser);
+      //analyser.connect(context.destination);
+      analyser.fftSize = 2048;
+      var bufferLength = analyser.frequencyBinCount;
+      var dataArray = new Uint8Array(analyser.fftSize);
+      analyser.getByteFrequencyData(dataArray);
+
+      $(".stopButton").on("click", function() {
+        clearTimeout(timer);
+        recorder.stop();
+        var title = replyTitle.value;
+        createDownloadLink(title);
+        recorder.clear();
+        popClose();
+      });
+
+      $(".startButton").on("click", function() {
+        recorder = new Recorder(microphone);
+        $("#startButton").css("display","none")
+        $("#stopButton").css("display", "block").attr("disabled",false);
+        recorder.record();
+        update();
+      });
+
+      function update() {
+        analyser.getByteFrequencyData(dataArray);
+        for (var j = 0; j < 256; j++) {
+          dd[j].style.height = dataArray[j] + 'px';
+          dd[j].style.background = 'rgba(' + (255 - j) + ',' + j * 2 + ',0,1)';
+        }
+        timer = setTimeout(update, 20);
+      }
+
+      function createDownloadLink(title) {
+        recorder.exportWAV(function(blob) {
+          var url = URL.createObjectURL(blob);
+          if (recordState == "yes") {
+            var soundStorageRef = storageRef.child("soundyes" + (soundyesNo.length + 1) + ".wav");
+          } else {
+            var soundStorageRef = storageRef.child("soundno" + (soundnoNo.length + 1) + ".wav");
+          }
+          var file = blob;
+          soundStorageRef.put(file).then(function(snapshot) {
+            if (recordState == "yes") {
+              console.log(soundyesNo);
+              console.log('Uploaded a file in yes :' + recordState + (soundyesNo.length + 1));
+              soundyesRef.child(soundyesNo.length + 1).set({
+                download: false,
+                title: title,
+                name: "soundyes",
+                state: recordState,
+                relation: choosedReply,
+                url: url
+              })
+            } else {
+              console.log('Uploaded a file in no :' + recordState + (soundnoNo.length + 1));
+              soundnoRef.child(soundnoNo.length + 1).set({
+                download: false,
+                name: "soundno",
+                title: title,
+                state: recordState,
+                relation: choosedReply,
+                url: url
+              })
+            }
+          });
+        });
+      }
+    }, function() {
+      console.log('error');
+    });
+  </script>
+
+</body>
+
+</html>
